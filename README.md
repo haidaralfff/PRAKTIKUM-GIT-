@@ -263,7 +263,33 @@ tombol.addEventListener("click", function () {
 });
 ```
 
-### 2. Menguji Tampilan di Browser
+### 2. Penjelasan Menghubungkan HTML, CSS, dan JavaScript
+
+Agar ketiga berkas tersebut dapat bekerja bersama sebagai satu kesatuan website, berkas CSS dan JavaScript harus dipanggil di dalam berkas `index.html`:
+
+1. **Menghubungkan Berkas CSS (`style.css`)**
+   Ditulis di dalam tag `<head>` menggunakan tag `<link>`:
+   ```html
+   <link rel="stylesheet" href="style.css">
+   ```
+   - `rel="stylesheet"`: Memberi tahu browser bahwa berkas yang dihubungkan adalah lembar gaya visual (*stylesheet*).
+   - `href="style.css"`: Menunjukkan letak/nama berkas CSS (pastikan berada di folder yang sama dengan `index.html`).
+
+2. **Menghubungkan Berkas JavaScript (`script.js`)**
+   Bisa diletakkan di dalam tag `<head>` dengan atribut `defer` atau tepat sebelum penutup `</body>`:
+   ```html
+   <script src="script.js" defer></script>
+   ```
+   - `src="script.js"`: Menunjukkan path/nama berkas JavaScript yang ingin dimuat.
+   - `defer`: Memastikan browser memuat dan membaca seluruh elemen HTML terlebih dahulu sebelum kode JavaScript dieksekusi, sehingga script tidak gagal saat mencari elemen halaman (seperti tombol/ID).
+
+> [!TIP]
+> **Catatan Struktur Folder:**
+> Pastikan `index.html`, `style.css`, dan `script.js` berada di direktori/folder yang sama agar pemanggilan `href="style.css"` dan `src="script.js"` langsung terbaca tanpa memerlukan path tambahan (seperti `css/` atau `js/`).
+
+---
+
+### 3. Menguji Tampilan di Browser
 - Buka berkas `index.html` dengan klik ganda agar tampil di browser.
 - Klik tombol **Kenalan Yuk!** untuk memastikan fungsi script berjalan.
 
